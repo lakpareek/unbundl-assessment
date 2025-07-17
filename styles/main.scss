@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Figtree', sans-serif;
 }
 
 
@@ -91,6 +94,65 @@
 
 }
 
+.secbtn {
+
+    @media (max-width: 800px) {
+        margin-right: 16px;
+    }
+
+    .btn {
+        border-radius: 70px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 12px 12px;
+        border: 1px solid;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        color: white;
+        transition: all 0.2s ease;
+
+        &-primary {
+            width: 154px;
+            background-color: white;
+            border-color: #462512;
+            color: #1A1A1A;
+
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+
+        &-secondary {
+            width: 200px;
+            background-color: #F8943F;
+            border-color: #DE6F0D;
+            color: white;
+
+            @media (max-width: 800px) {
+                display: none;
+            }
+
+            &:hover {
+                background-color: #DE6F0D;
+            }
+        }
+    }
+
+
+}
+
+.span-ul {
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: #DE6F0D;
+    }
+}
 
 .hero {
     display: flex;
@@ -101,10 +163,9 @@
     background-color: #FFFAF5;
     position: relative;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
     }
 
     .floating-bar {
@@ -123,6 +184,7 @@
         background-color: #FFF9F4;
         overflow: hidden;
         display: flex;
+
 
         .hero-pic-bg {
             position: absolute;
@@ -155,8 +217,22 @@
                 margin-left: 60px;
                 margin-bottom: 20px;
                 z-index: 3;
+
+                h2 {
+                    font-size: 16px;
+                    font-weight: 800;
+                    color: #303030;
+                }
+
+                h3 {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #4E4E4E;
+                    margin-top: 8px;
+                    margin-bottom: 20px;
+                }
             }
-            
+
         }
 
         .man-pic {
@@ -178,7 +254,7 @@
     }
 }
 
-.hero-form {
+.hero-form-container {
     background-color: #FFF9F4;
     border: #FFE0C4 1px solid;
     display: flex;
@@ -187,4 +263,140 @@
     align-items: center;
     width: 33%;
     height: 100%;
+    padding-top: 49px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    p,
+    h2 {
+        text-align: left;
+
+        width: 100%;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 20px;
+        color: #303030;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        color: #474747;
+    }
+
+    .consult-form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+
+
+        input {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            border-radius: 24px;
+            border: 1px solid #FFE0C4;
+            padding-left: 16px;
+            font-size: 16px;
+            color: #303030;
+
+            &:focus {
+                outline: none;
+                border-color: #F8943F;
+            }
+        }
+
+        .captcha-wrapper {
+            position: relative;
+            width: 100%;
+
+
+            input {
+                width: 100%;
+                height: 40px;
+                border-radius: 24px;
+                border: 1px solid #FFE0C4;
+                padding-left: 16px;
+                padding-right: 80px; // space for captcha text
+                font-size: 16px;
+                color: #303030;
+
+                &:focus {
+                    outline: none;
+                    border-color: #F8943F;
+                }
+            }
+
+            .captcha-label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                height: 100%;
+                width: 110px;
+                transform: translateY(-50%);
+                background-color: #FFE0C4;
+                border-radius: 0px 24px 24px 0px;
+                background-color: #462512;
+                font-size: 14px;
+                color: white;
+                pointer-events: none; // so it doesn’t block input clicks
+            }
+
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: start;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 8px;
+
+            input[type="checkbox"] {
+                width: 19px;
+                height: 19px;
+                border: 1px solid #FFE0C4;
+                appearance: none;
+                -webkit-appearance: none;
+                background-color: white;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+
+            label {
+                font-size: 12px;
+                font-weight: 400;
+                color: #303030;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+
+.book-btn {
+    width: 100%;
+    height: 38px;
+    border-radius: 24px;
+    background-color: #F58420;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: #DE6F0D;
+        color: white;
+    }
 }
