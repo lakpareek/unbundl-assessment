@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nav {
+    background-color: #FFFAF5;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 800px) {
+        height: 80px;
+    }
+
+    .logo {
+        margin-left: 43px;
+
+        // font-size: 24px;
+        // font-weight: bold;
+        @media (max-width: 800px) {
+            margin-left: 16px;
+        }
+    }
+}
+
+
+.sidebuttons {
+    margin-right: 60px;
+    display: flex;
+    gap: 12px;
+    flex-direction: row-reverse;
+
+    @media (max-width: 800px) {
+        margin-right: 16px;
+    }
+
+    .btn {
+        border-radius: 70px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 12px 12px;
+        border: 1px solid;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        color: white;
+        transition: all 0.2s ease;
+
+        &-primary {
+            width: 154px;
+            background-color: white;
+            border-color: #462512;
+            color: #1A1A1A;
+
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+
+        &-secondary {
+            width: 200px;
+            background-color: #F8943F;
+            border-color: #DE6F0D;
+            color: white;
+
+            @media (max-width: 800px) {
+                display: none;
+            }
+
+            &:hover {
+                background-color: #DE6F0D;
+            }
+        }
+    }
+
+
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 450px;
+    background-color: #FFFAF5;
+    position: relative;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .floating-bar {
+        position: absolute;
+        top: 450px;
+        left: 0;
+        z-index: 999;
+
+    }
+
+    .hero-pic {
+        position: relative;
+        width: 67%;
+        height: 100%;
+        //background-color: #D0D0D0;
+        background-color: #FFF9F4;
+        overflow: hidden;
+        display: flex;
+
+        .hero-pic-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/d9e2eb1945ffd93ea40450c1db6dd1c7d2b70f19.jpg');
+            background-size: 150%;
+            background-position: 0% 50%;
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
+            z-index: 1;
+        }
+
+        .hero-pic-banner {
+            position: relative;
+            z-index: 2;
+            background-color: white;
+            opacity: 1;
+            margin-top: 149px;
+            width: 644px;
+            height: 153px;
+            padding-top: 24px;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.6) 0%,
+                    rgba(255, 255, 255, 0.3) 100%);
+
+            .internal-text {
+                margin-left: 60px;
+                margin-bottom: 20px;
+                z-index: 3;
+            }
+            
+        }
+
+        .man-pic {
+            position: absolute;
+            left: 368px;
+            bottom: 43px;
+            z-index: 2;
+            transform: scaleX(-1);
+            scale: 1.15;
+
+            @media (max-width: 1120px) {
+                left: 340px;
+                bottom: -5px;
+                z-index: 2;
+                transform: scaleX(-1);
+                scale: 1;
+            }
+        }
+    }
+}
+
+.hero-form {
+    background-color: #FFF9F4;
+    border: #FFE0C4 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+}
