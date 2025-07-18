@@ -154,7 +154,7 @@
     background-color: white;
   }
 }
-.hero .floating-bar {
+.hero .ticker-tape-container {
   position: absolute;
   top: 450px;
   left: 0;
@@ -162,10 +162,48 @@
   height: 60px;
   width: 100%;
   background-color: #FFF9F4;
+  overflow-x: hidden;
+  display: flex;
 }
 @media (max-width: 1000px) {
-  .hero .floating-bar {
+  .hero .ticker-tape-container {
     top: 394px;
+  }
+}
+.hero .ticker-tape-container .ticker-tape {
+  --direction: normal;
+  --duration: 60s;
+  --delay: 0s;
+  --iteration-count: infinite;
+  display: flex;
+  gap: 40px;
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  min-width: 100%;
+  align-items: center;
+  animation: marquee var(--duration) linear var(--delay) var(--iteration-count);
+  animation-direction: var(--direction);
+}
+.hero .ticker-tape-container .ticker-tape .ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+.hero .ticker-tape-container .ticker-tape .ticker-item p {
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 2px;
+}
+.hero .ticker-tape-container .ticker-tape .ticker-item .colored {
+  margin-left: 12px;
+  color: #F58420;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 .hero .hero-pic {
@@ -548,4 +586,158 @@
   margin: 0px;
   font-weight: 600;
   font-size: 20px;
+}
+
+.real-smile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.real-smile .img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: scroll;
+}
+.real-smile .img-container .img-box {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 295px;
+  height: auto;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+.real-smile .img-container .img-box .text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.real-smile .img-container .img-box .text .name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+.real-smile .img-container .img-box .text .city {
+  font-weight: 600;
+  font-size: 14px;
+  color: #F58420;
+}
+.real-smile .img-container .img-box img {
+  width: 295px;
+  height: auto;
+  border-radius: 20px;
+}
+.top-text {
+  margin-top: 60px;
+}
+.top-text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #303030;
+  margin-bottom: 8px;
+  text-align: center;
+  max-width: 100%;
+}
+.top-text p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #474747;
+  text-align: center;
+  max-width: 100%;
+}
+
+.why-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+.why-section .why-section-data {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 96px;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  /* Style the accordion panel. Note: hidden by default */
+}
+@media (max-width: 1000px) {
+  .why-section .why-section-data {
+    padding-left: 12px;
+    padding-right: 12px;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+.why-section .why-section-data .image {
+  width: 461px;
+  height: auto;
+  border-radius: 20px;
+}
+@media (max-width: 1000px) {
+  .why-section .why-section-data .image {
+    width: 100%;
+  }
+}
+.why-section .why-section-data .accordion {
+  width: 100%;
+}
+.why-section .why-section-data .accordion .accordion-item {
+  margin-bottom: 40px;
+}
+.why-section .why-section-data .accordion .accordion-item .accordion-content.active {
+  margin-bottom: 0px;
+}
+.why-section .why-section-data .accordion .accordion-item .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.why-section .why-section-data .accordion .accordion-item .accordion-header p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin: 0;
+}
+.why-section .why-section-data .accordion .accordion-item .accordion-content {
+  margin-left: 8px;
+  font-weight: 400;
+  color: gray;
+  display: none;
+  max-height: 0;
+  transition: max-height 0.6s ease;
+  overflow: hidden;
+}
+.why-section .why-section-data .accordion .accordion-item .accordion-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+.why-section .why-section-data .accordion .accordion-item .accordion-content.active {
+  display: block;
+  max-height: 1000px;
+}
+.why-section .why-section-data .active,
+.why-section .why-section-data .accordion-header:hover {
+  cursor: pointer;
+}
+.why-section .why-section-data .panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

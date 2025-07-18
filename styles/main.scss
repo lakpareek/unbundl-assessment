@@ -172,7 +172,7 @@
     }
 
 
-    .floating-bar {
+    .ticker-tape-container {
         position: absolute;
         top: 450px;
         left: 0;
@@ -180,11 +180,54 @@
         height: 60px;
         width: 100%;
         background-color: #FFF9F4;
+        overflow-x: hidden;
+        display: flex;
 
         @media (max-width: 1000px) {
             top: 394px;
         }
 
+        .ticker-tape {
+            --direction: normal;
+            --duration: 60s;
+            --delay: 0s;
+            --iteration-count: infinite;
+            display: flex;
+            gap: 40px;
+            flex: 0 0 auto;
+            margin-right: 1rem;
+            min-width: 100%;
+            align-items: center;
+            animation: marquee var(--duration) linear var(--delay) var(--iteration-count);
+            animation-direction: var(--direction);
+
+            .ticker-item {
+                display: flex;
+                align-items: center;
+                gap: 0px;
+
+                p {
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin-left: 2px;
+                }
+
+                .colored {
+                    margin-left: 12px;
+                    color: #F58420;
+                }
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
     }
 
     .hero-pic {
@@ -506,6 +549,7 @@
     gap: 40px;
     overflow-x: auto;
     width: 100%;
+
     @media (max-width: 720px) {
         gap: auto;
         overflow: scroll;
@@ -528,18 +572,20 @@
         .bg {
             background-color: #E0D5CB;
             border-radius: 20px 0px 0px 20px;
-             @media (max-width: 720px){
+
+            @media (max-width: 720px) {
                 width: 285px;
                 height: 285px;
                 border-radius: 20px 20px 0px 0px;
-             }
+            }
         }
 
         .image {
             width: 320px;
             height: auto;
             border-radius: 20px 0px 0px 20px;
-             @media (max-width: 720px){
+
+            @media (max-width: 720px) {
                 width: 285px;
                 height: 285px;
                 border-radius: 20px 20px 0px 0px;
@@ -597,4 +643,186 @@
             }
         }
     }
+}
+
+.real-smile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .img-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 40px;
+        margin-top: 20px;
+        width: 100%;
+        overflow-x: scroll;
+
+        .img-box {
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            width: 295px;
+            height: auto;
+            border-radius: 20px;
+            flex-shrink: 0;
+
+            .text {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+
+                .name {
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #1A1A1A;
+                }
+
+                .city {
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #F58420;
+                }
+            }
+
+            img {
+                width: 295px;
+                height: auto;
+                border-radius: 20px;
+            }
+
+            p {}
+        }
+
+
+    }
+
+
+
+}
+
+.top-text {
+    margin-top: 60px;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #303030;
+        margin-bottom: 8px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 400;
+        color: #474747;
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+.why-section {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+
+    .why-section-data {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 96px;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+        @media (max-width: 1000px) {
+            padding-left: 12px;
+            padding-right: 12px;
+            align-items: center;
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+
+        .image {
+            width: 461px;
+            height: auto;
+            border-radius: 20px;
+
+            @media (max-width: 1000px) {
+                width: 100%;
+            }
+        }
+
+        .accordion {
+            width: 100%;
+
+            .accordion-item {
+                margin-bottom: 40px;
+
+                .accordion-content.active {
+                    margin-bottom: 0px;
+                }
+
+                .accordion-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    p {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #1A1A1A;
+                        margin: 0;
+                    }
+
+                }
+
+                .accordion-content {
+                    margin-left: 8px;
+                    font-weight: 400;
+                    color: gray;
+                    display: none;
+                    max-height: 0;
+                    transition: max-height 0.6s ease;
+                    overflow: hidden;
+
+                    ul {
+                        list-style-type: disc;
+                        padding-left: 1.5rem;
+                    }
+                }
+
+                .accordion-content.active {
+                    display: block;
+                    max-height: 1000px;
+                }
+            }
+        }
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .active,
+        .accordion-header:hover {
+            cursor: pointer;
+        }
+
+        /* Style the accordion panel. Note: hidden by default */
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+    }
+
+
 }
