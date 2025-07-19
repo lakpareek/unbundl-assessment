@@ -745,6 +745,7 @@
         width: 100%;
         padding-left: 50px;
         padding-right: 50px;
+
         @media (max-width: 1000px) {
             padding-left: 12px;
             padding-right: 12px;
@@ -825,4 +826,467 @@
     }
 
 
+}
+
+.review {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .review-cards {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 24px;
+        width: 100%;
+        overflow: auto;
+
+        @media (max-width: 1000px) {
+            gap: 20px;
+        }
+
+        .card {
+            height: auto;
+            border-radius: 10px;
+            width: 224px;
+
+            @media (max-width: 1000px) {
+                width: 200px;
+            }
+
+            img {
+                width: 224px;
+                height: 350px;
+                border-radius: 10px;
+                object-fit: cover;
+
+                @media (max-width: 1000px) {
+                    width: 200px;
+                    height: 360px;
+                }
+            }
+
+            .card-text {
+                display: flex;
+                align-items: start;
+                justify-content: space-between;
+                width: 100%;
+
+                .name-and-city {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    .name {
+                        font-size: 16px;
+                        color: #1A1A1A;
+                        font-weight: 600;
+                    }
+
+                    .city {
+                        font-size: 14px;
+                        color: #777777;
+                        font-weight: 600;
+                    }
+                }
+
+                .type {
+                    font-size: 16px;
+                    color: #F58420;
+                    font-weight: 600;
+                }
+            }
+        }
+
+    }
+}
+
+
+.booking-box {
+    margin-top: 60px;
+    width: 100%;
+    height: auto;
+    background-color: #FFF9F4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    border-radius: 10px;
+
+    @media (max-width: 1000px) {
+        border-radius: 20px;
+    }
+
+    h2 {
+
+        font-weight: 700;
+        font-size: 24px;
+        color: #303030;
+        margin-bottom: 20px;
+        margin-top: 16px;
+        text-align: center;
+
+        @media (max-width: 1000px) {
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+    }
+
+    .form {
+        display: flex;
+        width: 100%;
+        gap: 24px;
+        align-items: center;
+        justify-self: center;
+        padding-left: 12px;
+        padding-right: 12px;
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
+            gap: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        input {
+            height: 38px;
+            width: 100%;
+
+            border-radius: 24px;
+            border: 1px solid #FFE0C4;
+            padding-left: 16px;
+            padding-right: 80px; // space for captcha text
+            font-size: 16px;
+            color: #303030;
+        }
+
+
+        .captcha-wrapper {
+            position: relative;
+            width: 100%;
+
+
+            input {
+                width: 100%;
+                height: 40px;
+                border-radius: 24px;
+                border: 1px solid #FFE0C4;
+                padding-left: 16px;
+                padding-right: 80px; // space for captcha text
+                font-size: 16px;
+                color: #303030;
+
+                &:focus {
+                    outline: none;
+                    border-color: #F8943F;
+                }
+            }
+
+            .captcha-label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                height: 100%;
+                width: 110px;
+                transform: translateY(-50%);
+                background-color: #FFE0C4;
+                border-radius: 0px 24px 24px 0px;
+                background-color: #462512;
+                font-size: 14px;
+                color: white;
+                pointer-events: none; // so it doesn’t block input clicks
+            }
+
+
+
+        }
+
+    }
+
+    .checkbox-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: start;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 24px;
+
+        input[type="checkbox"] {
+            width: 19px;
+            height: 19px;
+            border: 1px solid #FFE0C4;
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        label {
+            font-size: 12px;
+            font-weight: 400;
+            color: #303030;
+            cursor: pointer;
+        }
+    }
+
+    .book-book {
+        width: 326px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
+
+}
+
+
+.safety {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .cards {
+        display: flex;
+        width: 100%;
+        gap: 24px;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @media (max-width: 1000px) {
+            flex-shrink: 0;
+            overflow-x: auto;
+            overflow-y: visible;
+            gap: 16px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 345px;
+            border-radius: 10px 10px 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 413px;
+            flex-shrink: 0;
+
+            @media (max-width: 1000px) {
+                max-width: 300px;
+                height: 380px;
+                border-radius: 10px 10px 0px 0px;
+
+            }
+
+            .overlay-box {
+                position: absolute;
+                top: 120px;
+                left: 32px;
+                width: 80%;
+                height: auto;
+                background-color: #112230;
+                padding: 20px;
+                border-radius: 20px;
+
+
+                @media (max-width: 1000px) {
+                    top: 200px;
+                    width: 100%;
+                    left: 0;
+                    height: auto;
+                    border-radius: 0px 0px 10px 10px;
+                    padding: 16px;
+                }
+
+                .overlay-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    width: 100%;
+
+                    .heading {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        h2 {
+                            font-size: 20px;
+                            font-weight: 700;
+                            color: white;
+                            margin-bottom: 8px;
+
+                            @media (max-width: 1000px) {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .special {
+                            font-size: 20px;
+                            font-weight: 700;
+                            color: white;
+                            margin-bottom: 8px;
+                            width: 100%;
+                            display: flex;
+                            align-items: baseline;
+                            gap: 8px;
+
+                            @media (max-width: 1000px) {
+                                font-size: 16px;
+                            }
+
+                            .aips-large {
+                                font-size: 28px;
+                                font-weight: 800;
+
+                                @media (max-width: 1000px) {
+                                    font-size: 22px;
+                                }
+                            }
+                        }
+
+
+                        hr {
+                            width: 100%;
+                            height: 10px;
+                            background-color: #F58420;
+                            border: none;
+                            border-radius: 10px;
+                            margin-left: 23px;
+                        }
+                    }
+
+                    .para {
+                        font-weight: 300;
+                        font-size: 16px;
+                        color: white;
+                        margin-bottom: 20px;
+
+                        @media (max-width: 1000px) {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .learn-more {
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        gap: 16px;
+                        width: 100%;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #F58420;
+
+                        @media (max-width: 1000px) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+
+            }
+
+            .third {
+                background-color: #462512;
+            }
+
+            img {
+                width: 100%;
+                height: 345px;
+                border-radius: 10px 10px 10px 10px;
+                object-fit: fill;
+                /* Use cover instead of fill */
+                object-position: center;
+
+                .scale-up {
+                    transform: scale(1.4);
+                }
+
+                @media (max-width: 1000px) {
+                    height: 200px;
+                    border-radius: 10px 10px 0px 0px;
+                }
+
+            }
+
+
+
+
+        }
+    }
+}
+
+.google-reviews {
+    margin-top: 60px;
+    width: 100vw;
+    height: 338px;
+    background-color: #FFF9F5;
+    padding-left: 137.62px;
+    padding-right: 137.62px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+
+
+
+    @media (max-width: 1000px) {
+        padding-left: 20px;
+        padding-right: 0px;
+    }
+
+    h2 {
+        color: #303030;
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
+    }
+
+    .review-table {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 69px;
+
+        hr {
+            border: 1px solid #FFDDC1;
+            height: 143px;
+            background-color: #FFDDC1;
+        }
+
+        .side-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 174px;
+            height: auto;
+
+            .avg {
+                margin-top: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 7.5px;
+
+                hr {
+                    border: 1px solid #FFDDC1;
+                    height: 27px;
+                    background-color: #FFDDC1;
+                }
+            }
+        }
+    }
 }
